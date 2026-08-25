@@ -24,4 +24,8 @@ app.use((req, res, next) => {
 });
 app.use(errorHandler);
 
-app.listen(port, () => console.log(`Northline Studio running at http://localhost:${port}`));
+if (require.main === module) {
+  app.listen(port, () => console.log(`Northline Studio running at http://localhost:${port}`));
+}
+
+module.exports = app;
