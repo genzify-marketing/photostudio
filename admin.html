@@ -1,0 +1,21 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="robots" content="noindex, nofollow">
+  <title>Northline Studio / Admin</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=Manrope:wght@400;500;600;700&family=Playfair+Display:ital,wght@0,500;1,500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="admin.css">
+  <script defer src="admin.js"></script>
+</head>
+<body>
+  <main class="admin-shell">
+    <header class="admin-header"><a class="brand" href="/">Northline <small>Studio / Admin</small></a><button class="button ghost" id="logout" type="button" hidden>Log out</button></header>
+    <section class="login-panel" id="login-panel"><p class="eyebrow">Private area</p><h1>Welcome<br><em>back.</em></h1><form id="login-form"><label>Email<input type="email" name="email" autocomplete="username" required></label><label>Password<input type="password" name="password" autocomplete="current-password" required></label><button class="button" type="submit">Enter dashboard <span>↗</span></button><p class="form-message" role="alert"></p></form></section>
+    <section class="dashboard" id="dashboard" hidden><div class="dashboard-heading"><div><p class="eyebrow">Gallery management</p><h1>Your <em>archive.</em></h1></div><button class="button" id="new-image" type="button">Upload image <span>+</span></button></div><div class="dashboard-grid"><form class="upload-panel" id="image-form"><input type="hidden" name="id"><h2 id="form-title">New image</h2><label>Image<input type="file" name="image" accept="image/jpeg,image/png,image/webp"></label><label>Title<input type="text" name="title" maxlength="180" required></label><label>Category<select name="category" required><option value="people">People</option><option value="places">Places</option><option value="stories">Stories</option></select></label><label>Description<textarea name="description" rows="4"></textarea></label><div class="form-actions"><button class="button" type="submit">Save image</button><button class="button ghost" id="cancel-edit" type="button">Cancel</button></div><p class="form-message" role="alert"></p></form><div class="gallery-panel"><div class="gallery-toolbar"><h2>Images <span id="image-count">0</span></h2><select id="category-filter" aria-label="Filter images"><option value="all">All categories</option><option value="people">People</option><option value="places">Places</option><option value="stories">Stories</option></select></div><div class="admin-gallery" id="admin-gallery"></div><p class="empty-state" id="empty-state" hidden>No images in this category yet.</p></div></div></section>
+  </main>
+</body>
+</html>
